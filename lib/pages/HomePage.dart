@@ -126,7 +126,32 @@ class _HomePageState extends State<HomePage> {
             ),
             title: Container(),
           ),
+          
           BottomNavigationBarItem(
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => MApp()));
+              },
+              child: Container(
+                  height: 52,
+                  width: 52,
+                  // decoration: BoxDecoration(
+                  //   shape: BoxShape.circle,
+                  //   gradient: LinearGradient(
+                  //     colors: [
+                  //       Colors.indigoAccent,
+                  //       Colors.purple,
+                  //     ],
+                  //   ),
+                  // ),
+                  child: Icon(
+                    Icons.monetization_on_outlined,
+                    size: 32,
+                    color: Colors.white,
+                  )),
+            ),
+            title: Container(),
             // icon: Icon(
               
             //   Icons.monetization_on_outlined,
@@ -135,16 +160,21 @@ class _HomePageState extends State<HomePage> {
               
                   
             // ),
-            icon: InkWell(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (builder) => MApp()));
-              },
-            child: Container(),
-          ),
+          //   icon: InkWell(
+          //     onTap: () {
+          //       Navigator.push(context,
+          //           MaterialPageRoute(builder: (builder) => MApp()));
+          //     },
+          //   child: Container(),
+          // ),
+          // )
+          
           )
         ],
       ),
+
+    
+      
       body: StreamBuilder(
           stream: _stream,
           builder: (context, snapshot) {
