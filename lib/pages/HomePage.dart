@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:keep_up/pages/AddTodo.dart';
 import 'package:intl/intl.dart';
 import 'package:date_format/date_format.dart';
+import 'package:keep_up/pages/fin_home.dart';
 
 import '../Service/Auth_Service.dart';
 import '../main.dart';
@@ -72,7 +73,7 @@ class _HomePageState extends State<HomePage> {
               .collection('Todo');
               for(int i=0; i<selected.length; i++)
               {
-                instance.;
+                instance;
               }
               },
             icon: Icon(
@@ -126,13 +127,22 @@ class _HomePageState extends State<HomePage> {
             title: Container(),
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.settings,
-              size: 32,
-              color: Colors.white,
-            ),
-            title: Container(),
+            // icon: Icon(
+              
+            //   Icons.monetization_on_outlined,
+            //   size: 32,
+            //   color: Colors.white,
+              
+                  
+            // ),
+            icon: InkWell(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (builder) => MApp()));
+              },
+            child: Container(),
           ),
+          )
         ],
       ),
       body: StreamBuilder(
